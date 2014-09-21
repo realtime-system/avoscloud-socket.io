@@ -9,7 +9,7 @@ app.set('view engine', 'ejs');    // 设置 template 引擎
 app.use(express.bodyParser());    // 读取请求 body 的中间件
 
 // var clientSource = read(path.resolve('.', 'socket.io-client/socket.io.js'), 'utf-8');
-var clientSource1 = read('socket.io-client/socket.io.js', 'utf-8');
+// var clientSource1 = read('socket.io-client/socket.io.js', 'utf-8');
 var clientSource2 = read('node_modules/socket.io-client/socket.io.js', 'utf-8');
 var clientSource3 = read('../node_modules/socket.io-client/socket.io.js', 'utf-8');
 
