@@ -6,6 +6,26 @@ app.set('views','cloud/views');   // 设置模板目录
 app.set('view engine', 'ejs');    // 设置 template 引擎
 app.use(express.bodyParser());    // 读取请求 body 的中间件
 
+var clientSource = read(require.resolve('socket.io-client/socket.io.js'), 'utf-8');
+
+app.get('/socket.io/socket.io.js', function(req, res) {
+    var etag = req.headers['if-none-match'];
+    if (etag) {
+      if (clientVersion == etag) {
+        debug('serve client 304');
+        res.writeHead(304);
+        res.end();
+        return;
+      }
+    }
+
+    debug('serve client source');
+    res.setHeader('Content-Type', 'application/javascript');
+    res.setHeader('ETag', clientVersion);
+    res.writeHead(200);
+    res.end(clientSource);
+});
+
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 // var port = process.env.PORT || 3000;
