@@ -33,7 +33,7 @@ app.use(express.bodyParser());    // 读取请求 body 的中间件
 // });
 
 var server = require('http').createServer(app);
-console.log('create server.');
+// console.log('create server.');
 var io = socketio(server);
 // var port = process.env.PORT || 3000;
 var port = 80;
