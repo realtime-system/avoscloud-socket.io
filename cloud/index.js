@@ -1,6 +1,11 @@
 // Setup basic express server
 var express = require('express');
 var app = express();
+
+app.set('views','cloud/views');   // 设置模板目录
+app.set('view engine', 'ejs');    // 设置 template 引擎
+app.use(express.bodyParser());    // 读取请求 body 的中间件
+
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 // var port = process.env.PORT || 3000;
