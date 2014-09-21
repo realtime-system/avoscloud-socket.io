@@ -2,6 +2,7 @@
 // var path = require('path');
 // var read = require('fs').readFileSync;
 var express = require('express');
+var socketio = require('socket.io');
 var app = express();
 
 app.set('views','cloud/views');   // 设置模板目录
@@ -32,7 +33,7 @@ app.use(express.bodyParser());    // 读取请求 body 的中间件
 // });
 
 var server = require('http').createServer(app);
-var io = require('socket.io')(server);
+var io = socketio(server);
 // var port = process.env.PORT || 3000;
 var port = 80;
 
