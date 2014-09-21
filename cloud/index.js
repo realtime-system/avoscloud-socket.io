@@ -1,5 +1,6 @@
 // Setup basic express server
 var path = require('path');
+var read = require('fs').readFileSync;
 var express = require('express');
 var app = express();
 
