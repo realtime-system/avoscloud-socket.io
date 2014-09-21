@@ -1,4 +1,5 @@
 // Setup basic express server
+require('path')
 var express = require('express');
 var app = express();
 
@@ -6,7 +7,7 @@ app.set('views','cloud/views');   // 设置模板目录
 app.set('view engine', 'ejs');    // 设置 template 引擎
 app.use(express.bodyParser());    // 读取请求 body 的中间件
 
-var clientSource = read(require.resolve('socket.io-client/socket.io.js'), 'utf-8');
+var clientSource = read(path.resolve('socket.io-client/socket.io.js'), 'utf-8');
 
 app.get('/socket.io/socket.io.js', function(req, res) {
     var etag = req.headers['if-none-match'];
