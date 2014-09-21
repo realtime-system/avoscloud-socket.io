@@ -36,10 +36,6 @@ var io = require('socket.io')(server);
 // var port = process.env.PORT || 3000;
 var port = 80;
 
-server.listen(port, function () {
-  console.log('Server listening at port %d', port);
-});
-
 // Routing
 // app.use(express.static(__dirname + '/public'));
 
@@ -108,4 +104,8 @@ io.on('connection', function (socket) {
       });
     }
   });
+});
+
+server.listen(port, function () {
+  console.log('Server listening at port %d', port);
 });
