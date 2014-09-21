@@ -1,6 +1,6 @@
 // Setup basic express server
-var path = require('path');
-var read = require('fs').readFileSync;
+// var path = require('path');
+// var read = require('fs').readFileSync;
 var express = require('express');
 var app = express();
 
@@ -36,7 +36,7 @@ var io = require('socket.io')(server);
 // var port = process.env.PORT || 3000;
 var port = 80;
 
-server.listen(port, function () {
+server.listen(server, function () {
   console.log('Server listening at port %d', port);
 });
 
