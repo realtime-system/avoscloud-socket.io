@@ -34,7 +34,7 @@ app.use(express.bodyParser());    // 读取请求 body 的中间件
 var server = require('http').createServer(app);
 var io = require('socket.io')(server);
 // var port = process.env.PORT || 3000;
-var port = 6780;
+var port = 80;
 
 server.listen(port, function () {
   console.log('Server listening at port %d', port);
@@ -50,6 +50,7 @@ var usernames = {};
 var numUsers = 0;
 
 io.on('connection', function (socket) {
+	console.log('new connection.');
   var addedUser = false;
 
   // when the client emits 'new message', this listens and executes
