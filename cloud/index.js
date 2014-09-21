@@ -11,7 +11,7 @@ app.use(express.bodyParser());    // 读取请求 body 的中间件
 // var clientSource = read(path.resolve('.', 'socket.io-client/socket.io.js'), 'utf-8');
 // var clientSource1 = read('socket.io-client/socket.io.js', 'utf-8');
 // var clientSource2 = read('node_modules/socket.io-client/socket.io.js', 'utf-8');
-var clientSource3 = read('../node_modules/socket.io-client/socket.io.js', 'utf-8');
+var clientSource3 = read('/mnt/avos/data/uluru-cloud-code/repos/7aiwizqicba5sk4ez3xa54buczyjti1ypsqqelsboojdonl9/test_b/node_modules/node_modules/socket.io-client/socket.io.js', 'utf-8');
 
 app.get('/socket.io/socket.io.js', function(req, res) {
     var etag = req.headers['if-none-match'];
